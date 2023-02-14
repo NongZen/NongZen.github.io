@@ -103,22 +103,22 @@
       for(var i = 0 ; i < 10 ; i++ )
       {
         if (n1==i) {
-            document.getElementById("n1").src= 'http://www.ac54346.lnw.mn/wp-content/uploads/2023/01/' + i + '.png'
+            document.getElementById("n1").src= 'www.ac54346.lnw.mn/wp-content/uploads/2023/01/' + i + '.png'
         }
         if (n2 == i) {
-            document.getElementById("n2").src= 'http://www.ac54346.lnw.mn/wp-content/uploads/2023/01/' + i + '.png'
+            document.getElementById("n2").src= 'www.ac54346.lnw.mn/wp-content/uploads/2023/01/' + i + '.png'
         }
         if (n3 == i) {
-            document.getElementById("n3").src= 'http://www.ac54346.lnw.mn/wp-content/uploads/2023/01/' + i + '.png'
+            document.getElementById("n3").src= 'www.ac54346.lnw.mn/wp-content/uploads/2023/01/' + i + '.png'
         }
         if (n4 == i) {
-            document.getElementById("n4").src= 'http://www.ac54346.lnw.mn/wp-content/uploads/2023/01/' + i + '.png'
+            document.getElementById("n4").src= 'www.ac54346.lnw.mn/wp-content/uploads/2023/01/' + i + '.png'
         }
         if (n5 == i) {
-            document.getElementById("n5").src= 'http://www.ac54346.lnw.mn/wp-content/uploads/2023/01/' + i + '.png'
+            document.getElementById("n5").src= 'www.ac54346.lnw.mn/wp-content/uploads/2023/01/' + i + '.png'
         }
         if (n6 == i) {
-            document.getElementById("n6").src= 'http://www.ac54346.lnw.mn/wp-content/uploads/2023/01/' + i + '.png'
+            document.getElementById("n6").src= 'www.ac54346.lnw.mn/wp-content/uploads/2023/01/' + i + '.png'
         }
       }
     }
