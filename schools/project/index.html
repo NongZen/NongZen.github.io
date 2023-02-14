@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zen's Site</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  <script src="https://nongzen.github.io/school/javascript/factorial.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <center>
+<h1 class="mt-3">How many project</h1>
+<ul class="pagination mx-auto mt-3" style="width: 450px" >
+  <li class="page-item"><a class="page-link" onclick="previous()">Previous</a></li>
+  <li class="page-item"><a class="page-link" onclick="show(project[1])" >1</a></li>
+  <li class="page-item"><a class="page-link" onclick="show(project[2])" >2</a></li>
+  <li class="page-item"><a class="page-link" onclick="show(project[3])" >3</a></li>
+  <li class="page-item"><a class="page-link" onclick="show(project[4])" >4</a></li>
+  <li class="page-item"><a class="page-link" onclick="show(project[5])" >5</a></li>
+  <li class="page-item"><a class="page-link" onclick="show(project[6])" >6</a></li>
+  <li class="page-item"><a class="page-link" onclick="show(project[7])" >7</a></li>
+  <li class="page-item"><a class="page-link" onclick="show(project[8])" >8</a></li>
+  <li class="page-item"><a class="page-link" onclick="show(project[9])" >9</a></li>
+  <li class="page-item"><a class="page-link" onclick="next()" >Next</a></li>
+</ul>
+<ul class="pagination mx-auto" style="display:inline-block" >
+  <li class="page-item"><a class="page-link" href="#" onclick="blank()" >Blank</a></li>
+</ul>
+
+      <h1 id="pj_num"> There no project here... </h1>
+      <h1 id="pj_name"> </h1> 
+      <h5 id="pj_blank">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> <br> Choose any project...  
+        <br> <br> <button  class="btn-warning"> <a href="https://www.youtube.com/watch?v=HIcSWuKMwOw" target="_blank" >Or Try Click On Me</a></button></h5> <br>
+  </center>
+
+  <!-- project 1 -->
+<div id="p1" style="display:none">
+    <div class="container-fluid p-5 bg-warning text-black text-center">
+      <h3>Theerabhop Suakaraya </h3>
+      <p>Do whatever you want just don’t give others trouble.</p> 
+    </div>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-sm-4">
+            <h3><li>About me</li></h3>
+            <p class="text-success"> Name - Theerabhop Suakaraya </p>
+            <p class="text-primary" ><b>Nickname</b> - <i><b>Zen</b></i> </p>
+          </div>
+          <div class="col-sm-4">
+            <h3><li>Favorite Subject</li></h3>
+            <p class="text-secondary"><u>Computer And Coding</u></p>
+          </div>
+          <div class="col-sm-4">
+            <h3><li>Hobbies</li></h3>        
+            <p class="text-info">Flying</p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+</div>
+  <!-- end of project 1 -->
+
+  <!-- project 2 -->
+<div id="p2" style="display:none">
+  <div class="container p-5 my-5 bg-primary text-white text-center">
+    <h1>H1 Assumption College</h1>
+    <p class="text-white-50"><b>Theerabhop Suakaraya M.2/4 32</b></p> 
+  </div>
+  
+  <div class="container pt-2">
+    <h2 class="text-success">h2 Our Teacher</h2> 
+  </div>
+  <div class="container pt-2">
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nongluck</td>
+          <td>Seenilthae</td>
+          <td>12345</td>
+        </tr>
+        <tr>
+          <td>Puengpis</td>
+          <td>Boonchoolertrat</td>
+          <td>12346</td>
+        </tr>
+        <tr>
+          <td>Warinthon</td>
+          <td>Jansupin</td>
+          <td>12347</td>
+        </tr>
+      </tbody>
+   </table>
+   </div>
+   
+  <div class="container pt-2">
+        <h3 class="text-warning">h3 OurCharacteristics!!!</h3>
+      </div>
+  <div class="container pt-2">
+        <h4 ><a style="color:#FF3">h4 </a> ACGentleman</h4>
+      </div>
+  <div class="container pt-2">
+        <h5>h5 Discipline</h5>
+      </div>
+  <div class="container pt-2">
+        <h6>h6 Eager to Learn</h6>
+      </div>
+</div>  
+  <!-- end of project 2 -->
+
+  <!-- project 3 -->
+<div id="p3" style="display:none"> 
+<!-- https://bit.ly/3ZTj1r9 -->
+  <div class="container mt-3">
+    <div class="mb-3 mt-3"> 
+      <label for="weight">Weight:</label>
+      <input type="number" class="form-control" id="weight" placeholder="Input Weight (kg.)" name="weight" required> <!-- ใส่น้ำหนัก -->
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="mb-3">
+      <label for="height">Height:</label>
+      <input type="number" class="form-control" id="height" placeholder="Input Height (cm.)" name="height" required> <!-- ใส่ส่วนสูง -->
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+      <button type="submit" onclick="bmi()" class="btn btn-primary">Calculate</button> <!-- ปุ่ม คำนวณ  -->
+      <div class="alert alert-success">
+        <p id="bmi">‎ </p> <!-- ตัวอักษร ‎ = ตัวอักษรล่องหน -->
+        <p id="bmi_txt">‎ </p>
+        <p id="bmi_tex">‎ </p>
+      </div> 
+  </div>
+</div>
+<!-- end project 3 -->
+
+<!-- project 4 -->
+<div id="p4" style="display:none">
+  <center>
+  <div class="mb-3 mt-3">
+    
+    <label for="Base"> Base: </label>
+    <input type="number" id="basetr" placeholder="Enter base(cm.)" name="base">
+  </div>
+  <div class="mb-3">
+    <label for="height">Height:</label>
+    <input type="number" id="heightr" placeholder="Enter height(cm.)" name="height">
+  </div>
+  <button type="submit" class="btn btn-primary" onclick="Tr()">Submit</button>
+  <div class="alert alert-success">
+    <p id="tr">0</p>  
+  </div>
+  </center>
+</div>
+<!-- end project 4 -->
+
+<!-- project 5 -->
+<div id="p5" style="display:none">
+  <div class="container mt-10">
+    <p> ‎</p>
+  </div>
+<div class="container mt-10">
+    <div class="mb-3 mt-10"> 
+      <label for="income">เงินได้สุทธิ:</label>
+      <input type="number" class="form-control" id="income" placeholder="ใส่ข้อมูลเงินได้สุทธิ (บาท)" name="income" > <!-- ใส่น้ำหนัก -->
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+      <button type="submit" onclick="tax()" class="btn btn-primary">Submit</button> <!-- ปุ่ม คำนวณ  -->
+      <div class="alert alert-success">
+         <p id="tax">‎ </p> <!-- ตัวอักษร ‎ = ตัวอักษรล่องหน -->
+         <p id="tax_txt">‎ </p>
+         <div id="havetax" style="display:none">
+         <p id="tax_word">‎</p>
+         <p id="tax_tex">‎ </p>
+         <p id="tax_word2">‎</p>
+         <p id="tax_tex2">‎</p>
+        </div>
+             </div> 
+    </div>
+</div>
+
+<!--  end project 5 -->
+
+<!-- project 6 -->
+<div id="p6" style="display:none">
+  <center>
+  <table>
+      <tr> <!-- table row-->
+          <td><img src="http://www.ac54346.lnw.mn/wp-content/uploads/2023/01/blank.png" id="n1"></img>    </td> <!-- table data-->
+          <td><img src="http://www.ac54346.lnw.mn/wp-content/uploads/2023/01/blank.png" id="n2"></img>    </td> 
+          <td><img src="http://www.ac54346.lnw.mn/wp-content/uploads/2023/01/blank.png" id="n3"></img>    </td>
+          <td><img src="http://www.ac54346.lnw.mn/wp-content/uploads/2023/01/blank.png" id="n4"></img>    </td>   
+          <td><img src="http://www.ac54346.lnw.mn/wp-content/uploads/2023/01/blank.png" id="n5"></img>    </td>
+          <td><img src="http://www.ac54346.lnw.mn/wp-content/uploads/2023/01/blank.png" id="n6"></img>    </td>
+      </tr>
+  </table>
+  <br>
+  <button type="button" onclick="random()" class="btn btn-primary" >Random</button>
+  </center>
+</div>
+<!-- end project 6 -->
+
+<!-- project 7 -->
+<div id="p7" style="display:none">
+    <center>
+      
+      <input class="mt-3 btn-secondary" type="text" id="cal_p7" required label=" "><br>
+      <button class="mt-3 btn-primary" type="summit" onclick="fac()">Factorial</button> 
+      <button class="mt-3 btn-warning" type="summit" onclick='p2()'>Power of <span id='exc'></span></button> 
+      <input class="input-sm btn-warning" id="ex" type="text"> <br>
+      <button class="btn-info mt-3" id="sqrt" type="summit" onclick="sqrt()">Square Root</button>
+      <br> <br> 
+      <h5 id="result_p7"> </h5>
+  </center>
+</div>
+<!-- end project 7 -->
+
+<!-- project 8 -->
+<div id="p8" style="display:none">
+  <center>
+  <h1 class="text-danger" >Suit K00N Simulator</h1> <br>  
+      <span class="text-primary">give me number to generate: </span> <input id="getnum_p8" class="btn-primary" type="number"> <br> <br>
+      <span class="text-success">and generate until: </span> <input id="getnum2_p8" class="btn-warning" type="number" > <br> <br>
+      <button class="btn-info" onclick="multitable()">show me the multiplication table!!</button> <br> <br>
+      <p id="text_p8" class="text-muted">-</p>
+  
+</center>
+</div>
+
+<!-- project 9 เกมหนอน-->
+
+<div id="p9" style="display:none">
+  <div > <!-- ตัวเกม -->
+    <center>
+    <div id="uppergame" stye="display:block">
+      <h5> Score:<span id="score_p9"></span></h5> 
+      <br>
+      <h5> Direction:<span id="direction_p9"></span></h5>
+      <h1>  <span id="t1_1">⚪</span> <span id="t1_2">⚪</span> <span id="t1_3">⚪</span> <span id="t1_4">⚪</span> <span id="t1_5">⚪</span> 
+        <span id="t1_6">⚪</span> <span id="t1_7">⚪</span> <span id="t1_8">⚪</span> <span id="t1_9">⚪</span> <span id="t1_10">⚪</span>  <span id="t1_11">⚪</span></h1>
+
+      <h1>  <span id="t2_1">⚪</span> <span id="t2_2">⚪</span> <span id="t2_3">⚪</span> <span id="t2_4">⚪</span> <span id="t2_5">⚪</span> 
+        <span id="t2_6">⚪</span> <span id="t2_7">⚪</span> <span id="t2_8">⚪</span> <span id="t2_9">⚪</span> <span id="t2_10">⚪</span>  <span id="t2_11">⚪</span></h1>
+
+      <h1>  <span id="t3_1">⚪</span> <span id="t3_2">⚪</span> <span id="t3_3">⚪</span> <span id="t3_4">⚪</span> <span id="t3_5">⚪</span> 
+        <span id="t3_6">⚪</span> <span id="t3_7">⚪</span> <span id="t3_8">⚪</span> <span id="t3_9">⚪</span> <span id="t3_10">⚪</span>  <span id="t3_11">⚪</span></h1>
+
+      <h1>  <span id="t4_1">⚪</span> <span id="t4_2">⚪</span> <span id="t4_3">⚪</span> <span id="t4_4">⚪</span> <span id="t4_5">⚪</span> 
+        <span id="t4_6">⚪</span> <span id="t4_7">⚪</span> <span id="t4_8">⚪</span> <span id="t4_9">⚪</span> <span id="t4_10">⚪</span>  <span id="t4_11">⚪</span></h1>
+
+      <h1>  <span id="t5_1">⚪</span> <span id="t5_2">⚪</span> <span id="t5_3">⚪</span> <span id="t5_4">⚪</span> <span id="t5_5">⚪</span> 
+        <span id="t5_6">⚪</span> <span id="t5_7">⚪</span> <span id="t5_8">⚪</span> <span id="t5_9">⚪</span> <span id="t5_10">⚪</span>  <span id="t5_11">⚪</span></h1>
+      
+      
+        
+      
+      <button id="start" onclick="start()"><b><span class="text-danger">START  </span></b></button> <br>
+       <button class="mt-1 btn-dark  " id="pause" onclick="look = 0"><b><span class="text-success">PAUSE</span></b></button> <button type="submit" class="btn-info" onclick="reset()">RESET</button> <br>
+      <button class="mt-2" onclick="look = 1">⬆</button> <br>
+      <button class="mt-1" onclick="look = 4">⬅</button> <button onclick="look = 3">➡</button> <br>
+      <button class="mt-1" onclick="look = 2">⬇</button> <br>
+      </div>
+    </center>
+      <div id="lowergame">
+      <div class="offcanvas offcanvas-start" id="custom">
+        <div class="offcanvas-header">
+          <h1 class="offcanvas-title"><span class="text-secondary">Custom Menu</span></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <button onchange="setspeedp9()"><span class="text-secondary">Set Speed To:</span></button><input type="number" placeholder="  (default = 1)" id="inputspd"> <br>
+          <button onchange="settimeupp9()"><span class="text-secondary">Set Time To:</span></button><input type="number" placeholder="    (second)" id="inputtime"> <br>
+        </div>
+      </div>
+    
+      
+      <div class="container-fluid mt-3">
+        <h3>Custom</h3>
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#custom">
+          Open Custom Menu
+        </button> <br>
+        <h1 class="mt-10">‎</h1>
+      </div>
+    </div>
+  </div>
+
+  <div id="resultgame" style="display:none">
+    <center>
+      <h1> <span class=text-warning>GG !</span> <br> <span id="cause_p9"></span> <br> <h2>Your Score is : <span id="endresult" class="text-success"></span></h2></h1>
+      <button type="submit" class="btn-info" onclick="reset()">RESET</button>
+    </center>
+  </div>
+
+</div>
+
+<!-- end project 9 -->
+
+<!-- start project 1 adv -->
+<div id="p1_adv" style="display:none">
+  <center>
+  
+  </center>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
