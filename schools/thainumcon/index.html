@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Number Converter</title>
+  </head>
+  <body>
+    <center>
+    <h1>Thai Number Converter</h1>
+    <div>
+      <h2>Input:</h2>
+      <textarea id="input" rows="10" cols="50"></textarea>
+    </div>
+    <div>
+      <h2>Output:</h2>
+      <textarea id="output" rows="10" cols="50" readonly></textarea>
+    </div>
+    <div>
+      <button onclick="convert()">Convert To Thai</button>
+      <button onclick="revert()">Convert To Arabic</button>
+      <button onclick="copy()">Copy</button>
+    </div>
+    </center>
+    <script>
+      function convert() {
+        // Get input value and split into array of lines
+        var input = document.getElementById("input").value;
+        var lines = input.split("\n");
+
+        // Loop through lines and replace digits with Thai numerals
+        var output = "";
+        for (var i = 0; i < lines.length; i++) {
+          var line = lines[i];
+          for (var j = 0; j < line.length; j++) {
+            var char = line.charAt(j);
+            switch (char) {
+              case "0":
+                output += "๐";
+                break;
+              case "1":
+                output += "๑";
+                break;
+              case "2":
+                output += "๒";
+                break;
+              case "3":
+                output += "๓";
+                break;
+              case "4":
+                output += "๔";
+                break;
+              case "5":
+                output += "๕";
+                break;
+              case "6":
+                output += "๖";
+                break;
+              case "7":
+                output += "๗";
+                break;
+              case "8":
+                output += "๘";
+                break;
+              case "9":
+                output += "๙";
+                break;
+              default:
+                output += char;
+            }
+          }
+          output += "\n";
+        }
+
+        // Set output value
+        document.getElementById("output").value = output;
+      }
+
+      function copy() {
+        var output = document.getElementById("output");
+        output.select();
+        document.execCommand("copy");
+      }
+      
+      function revert() {
+        var input = document.getElementById("input").value;
+        var lines = input.split("\n");
+        var result = "";
+        for (var i = 0; i < lines.length; i++) {
+          var line = lines[i];
+          for (var j = 0; j < line.length; j++) {
+            var char = line.charAt(j);
+                switch (char) {
+                case "๐":
+                    result += "0";
+                    break;
+                case "๑":
+                    result += "1";
+                    break;
+                case "๒":
+                    result += "2";
+                    break;
+                case "๓":
+                    result += "3";
+                    break;
+                case "๔":
+                    result += "4";
+                    break;
+                case "๕":
+                    result += "5";
+                    break;
+                case "๖":
+                    result += "6";
+                    break;
+                case "๗":
+                    result += "7";
+                    break;
+                case "๘":
+                    result += "8";
+                    break;
+                case "๙":
+                    result += "9";
+                    break;
+                default:
+                    result += char;
+                }
+            }
+            document.getElementById("output").value = result;
+        }
+}
+    </script>
+  </body>
+</html>
