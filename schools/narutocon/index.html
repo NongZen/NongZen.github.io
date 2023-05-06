@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Narutooo</title>
+  </head>
+  <body>
+    <center>
+    <h1>Naruto Ain Converter</h1>
+    <h3>มะเส็ง-ดิน จอ-ลม ขาล-ไฟ</h3>
+    <div>
+      <h2>Input:</h2>
+      <textarea id="input" rows="10" cols="50" onchange="convert()"></textarea>
+    </div>
+    <div>
+      <h2>Output:</h2>
+      <textarea id="output" rows="10" cols="50" readonly></textarea>
+    </div>
+    <div>
+      <button onclick="convert()">Convert To Naruto</button>
+      <button onclick="copy()">Copy</button>
+    </div>
+  </center>
+    <script>
+      function convert() {
+        // Get input value and split into array of lines
+        var input = document.getElementById("input").value;
+        var lines = input.split("\n");
+
+        // Loop through lines and replace digits with Thai numerals
+        var output = "";
+        for (var i = 0; i < lines.length; i++) {
+          var line = lines[i];
+          for (var j = 0; j < line.length; j++) {
+            var char = line.charAt(j);
+            switch (char) {
+              case "ท":
+                output += "ระกา ";
+                break;
+              case "ฑ":
+                output += "ระกา ";
+                break;
+              case "พ" || "ม":
+                output += "ระกา ";
+                break;
+              case "ม":
+                output += "ระกา ";
+                break;
+              case "ล":
+                output += "ขาล ";
+                break;
+              case "บ":
+                output += "ขาล ";
+                break;
+              case "ก":
+                output += "ขาล ";
+                break;
+              case "ต" :
+                output += "จอ ";
+                break;
+              case "ฏ" :
+                output += "จอ ";
+                break;
+              case "น" :
+                output += "จอ ";
+                break;
+              case "ห" :
+                output += "จอ ";
+                break;
+              case "ย" :
+                output += "ฉลู ";
+                break;
+              case "ญ" :
+                output += "ฉลู ";
+                break;
+              case "จ":
+                output += "ฉลู ";
+                break;
+              case "ษ" :
+                output += "ชวด ";
+                break;
+              case "ศ" :
+                output += "ชวด ";
+                break;
+              case "ช" :
+                output += "ชวด ";
+                break;
+              case "ป":
+                output += "ชวด ";
+                break;
+              case "ด":
+                output += "เถาะ ";
+                break;
+              case "ฎ":
+                output += "เถาะ ";
+                break;
+              case "ซ":
+                output += "เถาะ ";
+                break;
+              case "บ" :
+                output += "กุน ";
+                break;
+              case "ฉ" :
+                output += "กุน ";
+                break;
+              case "ว" :
+                output += "กุน ";
+                break;
+              case "ร" :
+                output += "มะโรง ";
+                break;
+              case "ผ" :
+                output += "มะโรง ";
+                break;
+              case "ง":
+                output += "วอก ";
+                break;
+              case "ฝ" :
+                output += "วอก ";
+                break;
+              case "ถ" :
+                output += "วอก ";
+                break;
+              case "ฐ":
+                output += "วอก ";
+                break;
+              case "ณ":
+                output += "มะแม ";
+                break;
+              case "ส":
+                output += "มะแม ";
+                break;
+              case "ฟ":
+                output += "มะเมีย ";
+                break;
+              case "ธ":
+                output += "มะเมีย ";
+                break;
+              case "ค" :
+                output += "มะเส็ง ";
+                break;
+              case "อ" :
+                output += "มะเส็ง ";
+                break;
+              case "ฌ":
+                output += "มะเส็ง ";
+                break;
+              case "ฌ":
+                output += "มะเส็ง ";
+                break;
+            }
+          }
+          output += "\n";
+        }
+
+        // Set output value
+        document.getElementById("output").value = output;
+      }
+
+      function copy() {
+        var output = document.getElementById("output");
+        output.select();
+        document.execCommand("copy");
+      }
+      
+    </script>
+  </body>
+</html>
