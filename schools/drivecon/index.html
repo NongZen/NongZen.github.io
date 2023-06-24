@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Number Converter</title>
+  </head>
+  <body>
+    <center>
+    <h1>Googledrive Converter</h1>
+    <div>
+      <h2>Input:</h2>
+      <textarea id="input" rows="10" cols="50"></textarea>
+    </div>
+    <div>
+      <h2>Output:</h2>
+      <textarea id="output" rows="10" cols="50" readonly></textarea>
+    </div>
+    <div>
+      <button onclick="convert()">Convert To uc?</button>
+      <button onclick="revert()">Convert To normal</button>
+      <button onclick="copy()">Copy</button>
+    </div>
+    </center>
+    <script>
+      function transformGoogleDriveLink(originalLink) {
+        var match = originalLink.match(/\/d\/([^/]+)/);
+        if (match && match[1]) {
+          var fileId = match[1];
+          var transformedLink = 'https://drive.google.com/uc?id=' + fileId;
+          return transformedLink;
+        }
+        return null;
+      }
+
+      function convert() {
+        var originalLink = document.getElementById("input").value;
+        var transformedLink = transformGoogleDriveLink(originalLink);
+        if (transformedLink) {
+          document.getElementById('output').value = transformedLink;
+        } else {
+          document.getElementById('output').value = 'Invalid link';
+        }
+      }
+
+      function copy() {
+        var output = document.getElementById("output");
+        output.select();
+        document.execCommand("copy");
+      }
+
+      function revertGoogleDriveLink(transformedLink) {
+  var fileId = transformedLink.match(/\/uc\?id=(.+)$/)[1];
+  var originalLink = 'https://drive.google.com/file/d/' + fileId + '/view?usp=drive_link';
+  return originalLink;
+}
+
+
+      function revert() {
+        var transformedLink = document.getElementById("input").value;
+        var originalLink = revertGoogleDriveLink(transformedLink);
+        document.getElementById('output').value = originalLink;
+      }
+    </script>
+  </body>
+</html>
