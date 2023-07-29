@@ -45,22 +45,24 @@
     </div>    
     <div class="row justify-content-center mb-3">
       <div class="col-md-6">
-        <input type="file" id="fileInput" class="form-control-file" multiple />
+        <!-- Allow image files and zip files -->
+        <input type="file" id="fileInput" class="form-control-file" multiple accept=".jpg, .jpeg, .png, .webp, .avif, .zip" />
       </div>
     </div>
     <div class="row justify-content-center mb-3">
       <div class="col-md-6">
-        <button class="btn btn-success btn-block" onclick="convertAndDownload()">Convert</button>
+        <button class="btn btn-success btn-block" onclick="convertAndDownload()">Convert & Download</button>
       </div>
     </div>
     <div class="row justify-content-center mb-3">
       <div class="col-md-6">
+        <!-- Add a longer progress bar -->
         <progress id="progressBar" max="100" value="0" style="display: none;" class="progress-bar progress-bar-striped"></progress>
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <a id="downloadLink" style="display: none;" class="btn btn-primary btn-block" download>Download Converted Image<span id="adds"></span></a>
+        <a id="downloadLink" style="display: none;" class="btn btn-primary btn-block" download>Download converted images</a>
       </div>
     </div>
   </div>
