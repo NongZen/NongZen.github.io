@@ -6,6 +6,8 @@ function setOutputType(type) {
   outputButton.textContent = `Output File Type: ${type.toUpperCase()}`;
 }
 
+// ... other functions ...
+
 async function processZipFile(file) {
   const zip = await JSZip.loadAsync(file);
 
@@ -15,7 +17,7 @@ async function processZipFile(file) {
   });
 
   if (imageFiles.length === 0) {
-    alert('The ZIP file does not contain any supported image files (jpg, jpeg, png, webp, avif).');
+    alert('The ZIP/RAR file does not contain any supported image files (jpg, jpeg, png, webp, avif).');
     return;
   }
 
@@ -30,6 +32,8 @@ async function processZipFile(file) {
 
   return await Promise.all(imageFilePromises);
 }
+
+// ... other functions ...
 
 async function convertAndDownload() {
   const files = document.getElementById("fileInput").files;
