@@ -30,15 +30,26 @@ async function processZipFile(file) {
 
   const imageFilePromises = imageFiles.map(async (imageFile) => {
     const dataURL = await imageFile.async('base64');
+    const image = new Image();
+    image.src = `data:image;base64,${dataURL}`;
+    await new Promise((resolve) => image.onload = resolve);
+
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = image.width;
+    canvas.height = image.height;
+    ctx.drawImage(image, 0, 0);
+
+    const extension = outputType === 'jpg' ? 'jpeg' : outputType;
+    const outputDataURL = canvas.toDataURL(`image/${extension}`, 1.0);
     return {
-      name: imageFile.name,
-      dataURL,
+      name: `${imageFile.name.split(".")[0]}.${extension}`,
+      dataURL: outputDataURL.split(',')[1],
     };
   });
 
   return await Promise.all(imageFilePromises);
 }
-
 async function convertAndDownload() {
   const files = document.getElementById("fileInput").files;
   const progressBar = document.getElementById("progressBar");
