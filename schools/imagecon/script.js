@@ -6,7 +6,14 @@ function setOutputType(type) {
   outputButton.textContent = `Output File Type: ${type.toUpperCase()}`;
 }
 
-// ... other functions ...
+function downloadFile(fileName, dataURL) {
+  const a = document.createElement("a");
+  a.href = dataURL;
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
 
 async function processZipFile(file) {
   const zip = await JSZip.loadAsync(file);
@@ -17,23 +24,20 @@ async function processZipFile(file) {
   });
 
   if (imageFiles.length === 0) {
-    alert('The ZIP/RAR file does not contain any supported image files (jpg, jpeg, png, webp, avif).');
-    return;
+    alert('The ZIP file does not contain any supported image files (jpg, jpeg, png, webp, avif).');
+    return null;
   }
 
   const imageFilePromises = imageFiles.map(async (imageFile) => {
     const dataURL = await imageFile.async('base64');
-    const extension = outputType === "jpg" ? "jpeg" : outputType;
     return {
-      name: `${imageFile.name.split(".")[0]}.${extension}`,
-      dataURL: dataURL.split(",")[1]
+      name: imageFile.name,
+      dataURL,
     };
   });
 
   return await Promise.all(imageFilePromises);
 }
-
-// ... other functions ...
 
 async function convertAndDownload() {
   const files = document.getElementById("fileInput").files;
@@ -47,7 +51,7 @@ async function convertAndDownload() {
 
   progressBar.style.display = "block";
   downloadLink.style.display = "none";
-  document.getElementById("adds").innerHTML = "";
+  
 
   if (files.length === 1 && files[0].name.endsWith('.zip')) {
     // If there's only one zip file, process it separately
@@ -57,7 +61,9 @@ async function convertAndDownload() {
         // Create a zip for the converted images
         const zip = new JSZip();
         imageFiles.forEach((imageFile) => {
-          zip.file(imageFile.name, imageFile.dataURL, { base64: true });
+          const extension = outputType === "jpg" ? "jpeg" : outputType;
+          const contentType = `image/${extension}`;
+          zip.file(imageFile.name, imageFile.dataURL, { base64: true, binary: true, compression: "STORE", contentType });
         });
 
         zip.generateAsync({ type: "blob" })
@@ -73,8 +79,21 @@ async function convertAndDownload() {
       alert('Error processing the ZIP file.');
       progressBar.style.display = "none";
     }
+  } else if (files.length === 1) {
+    // If there's only one image file, directly download without zipping
+    const file = files[0];
+    const reader = new FileReader();
+    reader.onloadend = function () {
+        document.getElementById("adds").innerHTML = "";
+        const extension = outputType === "jpg" ? "jpeg" : outputType;
+        downloadLink.href = reader.result;
+        downloadLink.download = `${file.name.split(".")[0]}.${extension}`;
+        downloadLink.style.display = "block";
+        progressBar.style.display = "none";
+    };
+    reader.readAsDataURL(file);
   } else {
-    // Handle conversion for individual image files
+    // Handle conversion for individual image files (multiple selection)
     const zip = new JSZip();
 
     let processedCount = 0;
@@ -97,6 +116,7 @@ async function convertAndDownload() {
         if (processedCount === files.length) {
           zip.generateAsync({ type: "blob" })
             .then(function (content) {
+              document.getElementById("adds").innerHTML = "s";
               const url = URL.createObjectURL(content);
               downloadLink.href = url;
               downloadLink.download = `converted_images.zip`;
